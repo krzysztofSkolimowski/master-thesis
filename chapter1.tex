@@ -1,0 +1,40 @@
+\chapter{Introduction}
+\label{cha:Introduction}
+
+The goal of this thesis is to analyse the problem of communication between distributed services and proposing the possible solution in the form of applying the messaging pattern. As the example of enterprise solutions, two successful projects: Apache Kafka and RabbitMQ are deeply covered and compared. The main focus is laid upon a cloud environment and application of mentioned platforms as a messaging centre for distributed applications. Nevertheless, both (especially Kafka) offers much more than a simple message broker module.
+
+The thesis also presents a simple implementation of a custom messaging module, written in Go. The example clearly shows the occurring issues, potential risks and demonstrates how critical part of the system the messaging module is. 
+%---------------------------------------------------------------------------
+
+\section{Motivation}
+\label{sec:Motivation}
+
+The 21st century began almost twenty years ago. The progress is knocking at the door every minute in each field of science. Nowadays, people are witnesses of a new revolution every year. The most growing discipline is unarguable, computer science. Every year usage of new technologies grows. People's demand for computing power, according to Moore's law\cite{moore}, grows twice every two years.
+
+Several years ago, Steeve Jobs revolutionised the world by introducing the iPhone. He made people leave their old mobile devices and had put a  smartphone into everyone's pocket. That changed the way how people use the Internet. From then on, everyone who owns a smartphone had easy access to the web at any time. That produced vast amounts of data and even more web traffic. 
+
+Servers,  as their name suggests, responsible for serving all the content around the world, also needed to take a step forward. Increase of computing power of a single unit is possible, although only to a certain point - hardware constraints exist. Therefore the idea of horizontal scaling (treating machines as resources and executing the same jobs in parallel on multiple ones) found it's application. That worked well with the idea of cloud computing, which provides on-demand availability of resources such as computing power and data storage.
+
+The whole industry has entirely fallen into the idea of the cloud and distributed systems. The architecture of micro-services (dividing large, monolithic systems/applications into smaller, easily multiplicative (often stateless) services) started to be extremely popular. It has not been a surprise. That approach carried a lot of apparent benefits: high scalability, loose coupling,  freedom to choose different technologies and more. However, in the world of new technologies, there is no such thing as a perfect solution to every problem. This path also brings numerous challenges, which are not trivial to solve. There are many of them, such as parallel computing, application versioning, code and data duplication, separation of purpose, creation of right abstractions, interpersonal team communication. The thesis covers one of the most crucial: communication between distributed services. The proposed solution (which is not, the only one) is the usage of a message broker module as the heart of the application.
+
+As time progresses, people rely on the Internet more and more. Systems have to be adapted to enormous amounts of requests and data. Almost every activity smartphone user performs (mobile devices are, today, the most significant source of web traffic \cite{traffic}) causes much processing on the server-side. According to the newest industry trends, we may be on the verge of another technological revolution: due to the emergence of the latest popular topic, which is the Internet of Things. Would it have the same impact as a car, computer and smartphone? It is only a bold prediction. However, one thing is sure. If IoT succeeds, the amount of web traffic will be enormous. Every trigger of a sensor may cause sending a request to the server over the network. Inanimate devices can produce more traffic than smartphone users will ever do. That involves much messaging, which requires reliable delivery. There is a question to ask: are our current systems capable of processing it?
+
+
+%--------------------------------------------------------------------------
+
+\section{Problem statement}
+\label{sec:problemStatement}
+
+The problem of reliable information sending and delivery is well known and much older than the computer science itself. From the beginning of civilisation, people have tried many ways of transferring messages over a long distance. Many problems have occurred. How to ensure the message will be delivered? How to ensure the recipient will be identified correctly? How to ensure nobody else will be able to read the information? Many solutions have been found. The whole science discipline (cryptography) focuses on the problem of encrypting messages. Post offices were founded to guarantee deliveries to a specific destination.
+
+With the advance of technology, the old messaging problems still apply. It may be counter-intuitive because TCP/IP data packet is not an envelope. That is undisputed truth. Communication between people and machines is different. The scale of the second one is enormously larger. Everything complicates, even more, when all the new trends like cloud, microservices, dynamic scaling and the growing number of devices are considered.
+
+The thesis describes possible communication approaches and focuses on the description of message broker modules. The best analog-world counterpart would be the post office. The broker is responsible for handling a high throughput of messages and reliable delivery of them to correct services. The increasing amount of traffic creates a queuing model. 
+
+
+%---------------------------------------------------------------------------
+
+\section{Content of the thesis}
+\label{sec:content}
+
+The thesis consists of this introduction, summary and five additional chapters, consequently: \textit{Background, Communication of services, Industrial solutions, Comparison} and \textit{Use case examples}. The reason behind this structure is not to miss any critical background information and to establish a framework of comparison, which would allow drawing correct conclusions. 
